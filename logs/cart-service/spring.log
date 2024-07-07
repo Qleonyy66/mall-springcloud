@@ -221,3 +221,965 @@ java.lang.IllegalArgumentException: Map has no value for 'id'
 
 14:29:56:696  INFO 34072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 14:29:56:707  INFO 34072 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+22:24:41:220  INFO 40332 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 40332 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:24:41:223 DEBUG 40332 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:24:41:223  INFO 40332 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:24:42:234  INFO 40332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:24:42:236  INFO 40332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:24:42:260  INFO 40332 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+22:24:42:434  INFO 40332 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:24:42:792  INFO 40332 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:24:42:800  INFO 40332 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:24:42:800  INFO 40332 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:24:42:987  INFO 40332 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:24:42:987  INFO 40332 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1723 ms
+22:24:43:893  WARN 40332 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartMapper' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'identifierGenerator' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator]: Factory method 'identifierGenerator' threw exception; nested exception is java.lang.NoSuchMethodError: 'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+22:24:43:899  INFO 40332 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+22:24:43:921  INFO 40332 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22:24:43:968 ERROR 40332 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.identifierGenerator(IdentifierGeneratorAutoConfiguration.java:52)
+
+The following method did not exist:
+
+    'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+
+The calling method's class, com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig, was loaded from the following location:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-boot-starter/3.4.3/mybatis-plus-boot-starter-3.4.3.jar!/com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class
+
+The called method's class, com.baomidou.mybatisplus.core.config.GlobalConfig, is available from the following locations:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar!/com/baomidou/mybatisplus/core/config/GlobalConfig.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    com.baomidou.mybatisplus.core.config.GlobalConfig: file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig and com.baomidou.mybatisplus.core.config.GlobalConfig
+
+22:26:01:341  INFO 37268 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 37268 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:26:01:342 DEBUG 37268 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:26:01:343  INFO 37268 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:26:02:170  INFO 37268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:26:02:171  INFO 37268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:26:02:192  INFO 37268 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+22:26:02:383  INFO 37268 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:26:02:753  INFO 37268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:26:02:761  INFO 37268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:26:02:761  INFO 37268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:26:02:945  INFO 37268 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:26:02:945  INFO 37268 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1563 ms
+22:26:03:630  WARN 37268 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartMapper' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'identifierGenerator' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator]: Factory method 'identifierGenerator' threw exception; nested exception is java.lang.NoSuchMethodError: 'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+22:26:03:634  INFO 37268 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+22:26:03:646  INFO 37268 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22:26:03:661 ERROR 37268 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.identifierGenerator(IdentifierGeneratorAutoConfiguration.java:52)
+
+The following method did not exist:
+
+    'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+
+The calling method's class, com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig, was loaded from the following location:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-boot-starter/3.4.3/mybatis-plus-boot-starter-3.4.3.jar!/com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class
+
+The called method's class, com.baomidou.mybatisplus.core.config.GlobalConfig, is available from the following locations:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar!/com/baomidou/mybatisplus/core/config/GlobalConfig.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    com.baomidou.mybatisplus.core.config.GlobalConfig: file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig and com.baomidou.mybatisplus.core.config.GlobalConfig
+
+22:26:53:929  INFO 3428 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 3428 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:26:53:931 DEBUG 3428 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:26:53:932  INFO 3428 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:26:54:900  INFO 3428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:26:54:902  INFO 3428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:26:54:922  INFO 3428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+22:26:55:143  INFO 3428 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:26:55:523  INFO 3428 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:26:55:531  INFO 3428 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:26:55:532  INFO 3428 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:26:55:771  INFO 3428 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:26:55:771  INFO 3428 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1790 ms
+22:26:56:320  WARN 3428 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartMapper' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'identifierGenerator' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator]: Factory method 'identifierGenerator' threw exception; nested exception is java.lang.NoSuchMethodError: 'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+22:26:56:323  INFO 3428 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+22:26:56:335  INFO 3428 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22:26:56:360 ERROR 3428 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.identifierGenerator(IdentifierGeneratorAutoConfiguration.java:52)
+
+The following method did not exist:
+
+    'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+
+The calling method's class, com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig, was loaded from the following location:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-boot-starter/3.4.3/mybatis-plus-boot-starter-3.4.3.jar!/com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class
+
+The called method's class, com.baomidou.mybatisplus.core.config.GlobalConfig, is available from the following locations:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar!/com/baomidou/mybatisplus/core/config/GlobalConfig.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    com.baomidou.mybatisplus.core.config.GlobalConfig: file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig and com.baomidou.mybatisplus.core.config.GlobalConfig
+
+22:28:24:911  INFO 39620 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 39620 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:28:24:912 DEBUG 39620 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:28:24:913  INFO 39620 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:28:25:803  INFO 39620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:28:25:805  INFO 39620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:28:25:822  INFO 39620 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+22:28:25:991  INFO 39620 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:28:26:324  INFO 39620 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:28:26:337  INFO 39620 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:28:26:338  INFO 39620 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:28:26:530  INFO 39620 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:28:26:530  INFO 39620 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1581 ms
+22:28:27:069  WARN 39620 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartMapper' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'identifierGenerator' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator]: Factory method 'identifierGenerator' threw exception; nested exception is java.lang.NoSuchMethodError: 'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+22:28:27:072  INFO 39620 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+22:28:27:084  INFO 39620 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22:28:27:098 ERROR 39620 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.identifierGenerator(IdentifierGeneratorAutoConfiguration.java:52)
+
+The following method did not exist:
+
+    'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+
+The calling method's class, com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig, was loaded from the following location:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-boot-starter/3.4.3/mybatis-plus-boot-starter-3.4.3.jar!/com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class
+
+The called method's class, com.baomidou.mybatisplus.core.config.GlobalConfig, is available from the following locations:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar!/com/baomidou/mybatisplus/core/config/GlobalConfig.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    com.baomidou.mybatisplus.core.config.GlobalConfig: file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig and com.baomidou.mybatisplus.core.config.GlobalConfig
+
+22:28:56:127  INFO 31680 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 31680 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:28:56:129 DEBUG 31680 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:28:56:130  INFO 31680 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:28:57:002  INFO 31680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:28:57:003  INFO 31680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:28:57:028  INFO 31680 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+22:28:57:227  INFO 31680 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:28:57:615  INFO 31680 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:28:57:628  INFO 31680 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:28:57:629  INFO 31680 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:28:57:835  INFO 31680 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:28:57:835  INFO 31680 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1665 ms
+22:28:58:425  WARN 31680 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartMapper' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'identifierGenerator' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator]: Factory method 'identifierGenerator' threw exception; nested exception is java.lang.NoSuchMethodError: 'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+22:28:58:428  INFO 31680 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+22:28:58:439  INFO 31680 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22:28:58:468 ERROR 31680 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.identifierGenerator(IdentifierGeneratorAutoConfiguration.java:52)
+
+The following method did not exist:
+
+    'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+
+The calling method's class, com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig, was loaded from the following location:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-boot-starter/3.4.3/mybatis-plus-boot-starter-3.4.3.jar!/com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class
+
+The called method's class, com.baomidou.mybatisplus.core.config.GlobalConfig, is available from the following locations:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar!/com/baomidou/mybatisplus/core/config/GlobalConfig.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    com.baomidou.mybatisplus.core.config.GlobalConfig: file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig and com.baomidou.mybatisplus.core.config.GlobalConfig
+
+22:30:27:389  INFO 33336 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 33336 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:30:27:391 DEBUG 33336 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:30:27:391  INFO 33336 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:30:28:246  INFO 33336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:30:28:248  INFO 33336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:30:28:274  INFO 33336 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+22:30:28:498  INFO 33336 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:30:28:835  INFO 33336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:30:28:842  INFO 33336 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:30:28:842  INFO 33336 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:30:29:009  INFO 33336 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:30:29:009  INFO 33336 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1571 ms
+22:30:29:484  WARN 33336 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartMapper' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'identifierGenerator' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator]: Factory method 'identifierGenerator' threw exception; nested exception is java.lang.NoSuchMethodError: 'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+22:30:29:487  INFO 33336 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+22:30:29:499  INFO 33336 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22:30:29:515 ERROR 33336 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.identifierGenerator(IdentifierGeneratorAutoConfiguration.java:52)
+
+The following method did not exist:
+
+    'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+
+The calling method's class, com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig, was loaded from the following location:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-boot-starter/3.4.3/mybatis-plus-boot-starter-3.4.3.jar!/com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class
+
+The called method's class, com.baomidou.mybatisplus.core.config.GlobalConfig, is available from the following locations:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar!/com/baomidou/mybatisplus/core/config/GlobalConfig.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    com.baomidou.mybatisplus.core.config.GlobalConfig: file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig and com.baomidou.mybatisplus.core.config.GlobalConfig
+
+22:32:23:007  INFO 38048 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 38048 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:32:23:008 DEBUG 38048 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:32:23:009  INFO 38048 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:32:23:797  INFO 38048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:32:23:800  INFO 38048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:32:23:835  INFO 38048 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+22:32:24:140  INFO 38048 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:32:24:537  INFO 38048 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:32:24:545  INFO 38048 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:32:24:545  INFO 38048 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:32:24:711  INFO 38048 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:32:24:711  INFO 38048 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1658 ms
+22:32:25:244  WARN 38048 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartMapper' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'identifierGenerator' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator]: Factory method 'identifierGenerator' threw exception; nested exception is java.lang.NoSuchMethodError: 'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+22:32:25:247  INFO 38048 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+22:32:25:259  INFO 38048 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22:32:25:273 ERROR 38048 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.identifierGenerator(IdentifierGeneratorAutoConfiguration.java:52)
+
+The following method did not exist:
+
+    'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+
+The calling method's class, com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig, was loaded from the following location:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-boot-starter/3.4.3/mybatis-plus-boot-starter-3.4.3.jar!/com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class
+
+The called method's class, com.baomidou.mybatisplus.core.config.GlobalConfig, is available from the following locations:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar!/com/baomidou/mybatisplus/core/config/GlobalConfig.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    com.baomidou.mybatisplus.core.config.GlobalConfig: file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig and com.baomidou.mybatisplus.core.config.GlobalConfig
+
+22:33:21:196  INFO 34704 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 34704 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:33:21:198 DEBUG 34704 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:33:21:199  INFO 34704 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:33:21:968  INFO 34704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:33:21:970  INFO 34704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:33:21:989  INFO 34704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+22:33:22:152  INFO 34704 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:33:22:475  INFO 34704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:33:22:483  INFO 34704 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:33:22:484  INFO 34704 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:33:22:657  INFO 34704 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:33:22:657  INFO 34704 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1418 ms
+22:33:23:148  WARN 34704 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartMapper' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'identifierGenerator' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator]: Factory method 'identifierGenerator' threw exception; nested exception is java.lang.NoSuchMethodError: 'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+22:33:23:151  INFO 34704 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+22:33:23:164  INFO 34704 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22:33:23:178 ERROR 34704 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.identifierGenerator(IdentifierGeneratorAutoConfiguration.java:52)
+
+The following method did not exist:
+
+    'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+
+The calling method's class, com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig, was loaded from the following location:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-boot-starter/3.4.3/mybatis-plus-boot-starter-3.4.3.jar!/com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class
+
+The called method's class, com.baomidou.mybatisplus.core.config.GlobalConfig, is available from the following locations:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar!/com/baomidou/mybatisplus/core/config/GlobalConfig.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    com.baomidou.mybatisplus.core.config.GlobalConfig: file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig and com.baomidou.mybatisplus.core.config.GlobalConfig
+
+22:34:53:638  INFO 39012 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 39012 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:34:53:640 DEBUG 39012 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:34:53:641  INFO 39012 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:34:54:445  INFO 39012 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:34:54:446  INFO 39012 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:34:54:468  INFO 39012 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+22:34:54:631  INFO 39012 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:34:54:957  INFO 39012 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:34:54:970  INFO 39012 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:34:54:971  INFO 39012 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:34:55:135  INFO 39012 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:34:55:136  INFO 39012 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1460 ms
+22:34:55:608  WARN 39012 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartMapper' defined in file [D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'identifierGenerator' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.baomidou.mybatisplus.core.incrementer.IdentifierGenerator]: Factory method 'identifierGenerator' threw exception; nested exception is java.lang.NoSuchMethodError: 'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+22:34:55:611  INFO 39012 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+22:34:55:622  INFO 39012 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+22:34:55:645 ERROR 39012 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.identifierGenerator(IdentifierGeneratorAutoConfiguration.java:52)
+
+The following method did not exist:
+
+    'java.lang.Long com.baomidou.mybatisplus.core.config.GlobalConfig.getWorkerId()'
+
+The calling method's class, com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig, was loaded from the following location:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-boot-starter/3.4.3/mybatis-plus-boot-starter-3.4.3.jar!/com/baomidou/mybatisplus/autoconfigure/IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig.class
+
+The called method's class, com.baomidou.mybatisplus.core.config.GlobalConfig, is available from the following locations:
+
+    jar:file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar!/com/baomidou/mybatisplus/core/config/GlobalConfig.class
+
+The called method's class hierarchy was loaded from the following locations:
+
+    com.baomidou.mybatisplus.core.config.GlobalConfig: file:/C:/Users/abc/.m2/repository/com/baomidou/mybatis-plus-core/3.5.3.1/mybatis-plus-core-3.5.3.1.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains compatible versions of the classes com.baomidou.mybatisplus.autoconfigure.IdentifierGeneratorAutoConfiguration$InetUtilsAutoConfig and com.baomidou.mybatisplus.core.config.GlobalConfig
+
+22:35:45:616  INFO 20316 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 20316 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:35:45:618 DEBUG 20316 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:35:45:618  INFO 20316 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:35:46:572  INFO 20316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:35:46:574  INFO 20316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:35:46:591  INFO 20316 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
+22:35:46:755  INFO 20316 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:35:47:145  INFO 20316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:35:47:151  INFO 20316 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:35:47:152  INFO 20316 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:35:47:311  INFO 20316 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:35:47:311  INFO 20316 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1651 ms
+22:35:48:603  INFO 20316 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+22:35:48:985  INFO 20316 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of ffb6c1c9-3df3-4cf4-b2b9-ede14011974e
+22:35:49:047  INFO 20316 --- [main] org.reflections.Reflections              : Reflections took 32 ms to scan 1 urls, producing 3 keys and 6 values 
+22:35:49:098  INFO 20316 --- [main] org.reflections.Reflections              : Reflections took 21 ms to scan 1 urls, producing 4 keys and 9 values 
+22:35:49:108  INFO 20316 --- [main] org.reflections.Reflections              : Reflections took 6 ms to scan 1 urls, producing 3 keys and 10 values 
+22:35:49:110  WARN 20316 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:35:49:117  INFO 20316 --- [main] org.reflections.Reflections              : Reflections took 7 ms to scan 1 urls, producing 1 keys and 5 values 
+22:35:49:127  INFO 20316 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 1 keys and 7 values 
+22:35:49:138  INFO 20316 --- [main] org.reflections.Reflections              : Reflections took 9 ms to scan 1 urls, producing 2 keys and 8 values 
+22:35:49:141  WARN 20316 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:35:49:142  INFO 20316 --- [main] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] RpcClient init label, labels = {module=naming, source=sdk}
+22:35:49:145  INFO 20316 --- [main] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+22:35:49:145  INFO 20316 --- [main] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+22:35:49:146  INFO 20316 --- [main] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+22:35:49:147  INFO 20316 --- [main] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] Try to connect to server on start up, server: {serverIp = '192.168.91.132', server main port = 8848}
+22:35:50:014  INFO 20316 --- [main] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] Success to connect to server [192.168.91.132:8848] on start up, connectionId = 1720362949737_192.168.91.1_28596
+22:35:50:016  INFO 20316 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] Notify connected event to listeners.
+22:35:50:016  INFO 20316 --- [main] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+22:35:50:018  INFO 20316 --- [main] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1084/0x00000249c9712c20
+22:35:50:097  INFO 20316 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+22:35:50:225  INFO 20316 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP cart-service 192.168.221.1:8082 register finished
+22:35:50:227  INFO 20316 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+22:35:50:230  INFO 20316 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+22:35:50:254  INFO 20316 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+22:35:50:274  INFO 20316 --- [main] com.hmall.cart.cartApplication           : Started cartApplication in 5.37 seconds (JVM running for 6.299)
+22:35:50:658  INFO 20316 --- [nacos-grpc-client-executor-9] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] Receive server push request, request = NotifySubscriberRequest, requestId = 2
+22:35:50:662  INFO 20316 --- [nacos-grpc-client-executor-9] com.alibaba.nacos.common.remote.client   : [ffb6c1c9-3df3-4cf4-b2b9-ede14011974e] Ack server push request, request = NotifySubscriberRequest, requestId = 2
+22:35:56:228  INFO 20316 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:35:56:228  INFO 20316 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+22:35:56:229  INFO 20316 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+22:39:22:212  WARN 20316 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+22:39:22:212  WARN 20316 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+22:39:22:212  WARN 20316 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+22:39:22:213  WARN 20316 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+22:39:22:327  INFO 20316 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+22:39:22:353  INFO 20316 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+22:39:22:689  INFO 20316 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+22:39:22:689  INFO 20316 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@441a983c[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+22:39:22:689  INFO 20316 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1720362949737_192.168.91.1_28596
+22:39:22:694  INFO 20316 --- [nacos-grpc-client-executor-62] c.a.n.c.remote.client.grpc.GrpcClient    : [1720362949737_192.168.91.1_28596]Ignore complete event,isRunning:false,isAbandon=false
+22:39:22:739  INFO 20316 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@550e6684[Running, pool size = 6, active threads = 0, queued tasks = 0, completed tasks = 63]
+22:39:27:417  INFO 46768 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 46768 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:39:27:419 DEBUG 46768 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:39:27:419  INFO 46768 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:39:28:326  INFO 46768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:39:28:330  INFO 46768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:39:28:391  INFO 46768 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 0 Redis repository interfaces.
+22:39:28:593  INFO 46768 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:39:28:925  INFO 46768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:39:28:935  INFO 46768 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:39:28:935  INFO 46768 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:39:29:264  INFO 46768 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:39:29:264  INFO 46768 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1778 ms
+22:39:30:999  INFO 46768 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+22:39:31:468  INFO 46768 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 74ff91be-58b4-4866-9a95-99309722e341
+22:39:31:515  INFO 46768 --- [main] org.reflections.Reflections              : Reflections took 26 ms to scan 1 urls, producing 3 keys and 6 values 
+22:39:31:539  INFO 46768 --- [main] org.reflections.Reflections              : Reflections took 10 ms to scan 1 urls, producing 4 keys and 9 values 
+22:39:31:549  INFO 46768 --- [main] org.reflections.Reflections              : Reflections took 7 ms to scan 1 urls, producing 3 keys and 10 values 
+22:39:31:552  WARN 46768 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:39:31:572  INFO 46768 --- [main] org.reflections.Reflections              : Reflections took 19 ms to scan 1 urls, producing 1 keys and 5 values 
+22:39:31:583  INFO 46768 --- [main] org.reflections.Reflections              : Reflections took 9 ms to scan 1 urls, producing 1 keys and 7 values 
+22:39:31:598  INFO 46768 --- [main] org.reflections.Reflections              : Reflections took 13 ms to scan 1 urls, producing 2 keys and 8 values 
+22:39:31:600  WARN 46768 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:39:31:601  INFO 46768 --- [main] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] RpcClient init label, labels = {module=naming, source=sdk}
+22:39:31:605  INFO 46768 --- [main] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+22:39:31:605  INFO 46768 --- [main] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+22:39:31:605  INFO 46768 --- [main] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+22:39:31:607  INFO 46768 --- [main] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Try to connect to server on start up, server: {serverIp = '192.168.91.132', server main port = 8848}
+22:39:32:762  INFO 46768 --- [main] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Success to connect to server [192.168.91.132:8848] on start up, connectionId = 1720363172457_192.168.91.1_28921
+22:39:32:764  INFO 46768 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Notify connected event to listeners.
+22:39:32:765  INFO 46768 --- [main] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+22:39:32:766  INFO 46768 --- [main] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1084/0x0000019491711fb0
+22:39:32:896  INFO 46768 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+22:39:33:039  INFO 46768 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP cart-service 192.168.221.1:8082 register finished
+22:39:33:040  INFO 46768 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+22:39:33:043  INFO 46768 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+22:39:33:066  INFO 46768 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+22:39:33:079  INFO 46768 --- [main] com.hmall.cart.cartApplication           : Started cartApplication in 6.483 seconds (JVM running for 7.358)
+22:39:33:395  INFO 46768 --- [nacos-grpc-client-executor-9] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Receive server push request, request = NotifySubscriberRequest, requestId = 3
+22:39:33:408  INFO 46768 --- [nacos-grpc-client-executor-9] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Ack server push request, request = NotifySubscriberRequest, requestId = 3
+22:39:37:038  WARN 46768 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+22:39:37:038  WARN 46768 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+22:39:37:039  WARN 46768 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+22:39:37:039  WARN 46768 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+22:39:37:099  INFO 46768 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+22:39:37:109  INFO 46768 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+22:39:37:696  INFO 46768 --- [nacos-grpc-client-executor-13] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Receive server push request, request = NotifySubscriberRequest, requestId = 4
+22:39:37:714  INFO 46768 --- [nacos-grpc-client-executor-13] com.alibaba.nacos.common.remote.client   : [74ff91be-58b4-4866-9a95-99309722e341] Ack server push request, request = NotifySubscriberRequest, requestId = 4
+22:39:37:764  INFO 46768 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+22:39:37:765  INFO 46768 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@331dd503[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+22:39:37:765  INFO 46768 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1720363172457_192.168.91.1_28921
+22:39:37:773  INFO 46768 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@622cdbf9[Running, pool size = 14, active threads = 0, queued tasks = 0, completed tasks = 14]
+22:39:42:059  INFO 36472 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 36472 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:39:42:060 DEBUG 36472 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:39:42:061  INFO 36472 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:39:43:375  INFO 36472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:39:43:378  INFO 36472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:39:43:413  INFO 36472 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+22:39:43:730  INFO 36472 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1c824cc2-7939-3561-bf16-1b50a1a7aea8
+22:39:44:287  INFO 36472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:39:44:299  INFO 36472 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:39:44:300  INFO 36472 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:39:44:613  INFO 36472 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:39:44:613  INFO 36472 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2512 ms
+22:39:46:393  INFO 36472 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+22:39:47:035  INFO 36472 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 4a9eb03d-e337-4388-84ef-84b869f97818
+22:39:47:080  INFO 36472 --- [main] org.reflections.Reflections              : Reflections took 28 ms to scan 1 urls, producing 3 keys and 6 values 
+22:39:47:116  INFO 36472 --- [main] org.reflections.Reflections              : Reflections took 17 ms to scan 1 urls, producing 4 keys and 9 values 
+22:39:47:133  INFO 36472 --- [main] org.reflections.Reflections              : Reflections took 11 ms to scan 1 urls, producing 3 keys and 10 values 
+22:39:47:137  WARN 36472 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:39:47:154  INFO 36472 --- [main] org.reflections.Reflections              : Reflections took 15 ms to scan 1 urls, producing 1 keys and 5 values 
+22:39:47:165  INFO 36472 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 1 keys and 7 values 
+22:39:47:177  INFO 36472 --- [main] org.reflections.Reflections              : Reflections took 10 ms to scan 1 urls, producing 2 keys and 8 values 
+22:39:47:179  WARN 36472 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:39:47:181  INFO 36472 --- [main] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] RpcClient init label, labels = {module=naming, source=sdk}
+22:39:47:183  INFO 36472 --- [main] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+22:39:47:183  INFO 36472 --- [main] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+22:39:47:184  INFO 36472 --- [main] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+22:39:47:185  INFO 36472 --- [main] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] Try to connect to server on start up, server: {serverIp = '192.168.91.132', server main port = 8848}
+22:39:48:183  INFO 36472 --- [main] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] Success to connect to server [192.168.91.132:8848] on start up, connectionId = 1720363187839_192.168.91.1_28976
+22:39:48:185  INFO 36472 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] Notify connected event to listeners.
+22:39:48:185  INFO 36472 --- [main] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+22:39:48:186  INFO 36472 --- [main] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1084/0x0000026dc57141f8
+22:39:48:291  INFO 36472 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+22:39:48:448  INFO 36472 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:39:48:449  INFO 36472 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+22:39:48:453  INFO 36472 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+22:39:48:676  INFO 36472 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP cart-service 192.168.221.1:8082 register finished
+22:39:48:678  INFO 36472 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+22:39:48:684  INFO 36472 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+22:39:48:729  INFO 36472 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+22:39:48:799  INFO 36472 --- [nacos-grpc-client-executor-10] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] Receive server push request, request = NotifySubscriberRequest, requestId = 6
+22:39:48:818  INFO 36472 --- [nacos-grpc-client-executor-10] com.alibaba.nacos.common.remote.client   : [4a9eb03d-e337-4388-84ef-84b869f97818] Ack server push request, request = NotifySubscriberRequest, requestId = 6
+22:39:48:949  INFO 36472 --- [main] com.hmall.cart.cartApplication           : Started cartApplication in 7.653 seconds (JVM running for 8.507)
+22:39:54:928 ERROR 36472 --- [http-nio-8082-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.builder.BuilderException: Error evaluating expression 'ew.sqlSegment != null and ew.sqlSegment != '' and ew.nonEmptyOfWhere'. Cause: org.apache.ibatis.ognl.OgnlException: sqlSegment [java.lang.ExceptionInInitializerError]] with root cause
+
+java.lang.reflect.InaccessibleObjectException: Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @6302bbb1
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354) ~[na:na]
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297) ~[na:na]
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178) ~[na:na]
+	at java.base/java.lang.reflect.Field.setAccessible(Field.java:172) ~[na:na]
+	at com.baomidou.mybatisplus.core.toolkit.SetAccessibleAction.run(SetAccessibleAction.java:18) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.toolkit.SetAccessibleAction.run(SetAccessibleAction.java:9) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318) ~[na:na]
+	at com.baomidou.mybatisplus.core.toolkit.ReflectionKit.setAccessible(ReflectionKit.java:203) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.toolkit.support.SerializedLambdaMeta.<clinit>(SerializedLambdaMeta.java:19) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.toolkit.LambdaUtils.extract(LambdaUtils.java:55) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.getColumnCache(AbstractLambdaWrapper.java:75) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.columnToString(AbstractLambdaWrapper.java:62) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.columnToString(AbstractLambdaWrapper.java:58) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.columnToString(AbstractLambdaWrapper.java:38) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractWrapper.lambda$columnToSqlSegment$a3f115af$1(AbstractWrapper.java:575) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682) ~[na:na]
+	at com.baomidou.mybatisplus.core.conditions.segments.NormalSegmentList.childrenSqlSegment(NormalSegmentList.java:89) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.segments.AbstractISegmentList.getSqlSegment(AbstractISegmentList.java:103) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.segments.MergeSegments.getSqlSegment(MergeSegments.java:72) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractWrapper.getSqlSegment(AbstractWrapper.java:525) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.apache.ibatis.ognl.OgnlRuntime.invokeMethodInsideSandbox(OgnlRuntime.java:1266) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.OgnlRuntime.invokeMethod(OgnlRuntime.java:1251) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.OgnlRuntime.getMethodValue(OgnlRuntime.java:2163) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ObjectPropertyAccessor.getPossibleProperty(ObjectPropertyAccessor.java:66) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ObjectPropertyAccessor.getProperty(ObjectPropertyAccessor.java:160) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:3373) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:121) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTChain.getValueBody(ASTChain.java:141) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:61) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:586) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:550) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:46) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.TrimSqlNode.apply(TrimSqlNode.java:55) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:35) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:305) ~[mybatis-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:69) ~[mybatis-plus-extension-3.4.3.jar:3.4.3]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62) ~[mybatis-3.5.7.jar:3.5.7]
+	at jdk.proxy2/jdk.proxy2.$Proxy141.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at jdk.proxy2/jdk.proxy2.$Proxy96.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy97.selectList(Unknown Source) ~[na:na]
+	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.list(ChainQuery.java:39) ~[mybatis-plus-extension-3.4.3.jar:3.4.3]
+	at com.hmall.cart.service.impl.CartServiceImpl.queryMyCarts(CartServiceImpl.java:76) ~[classes/:na]
+	at com.hmall.cart.service.impl.CartServiceImpl$$FastClassBySpringCGLIB$$7813828f.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386) ~[spring-aop-5.3.27.jar:5.3.27]
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85) ~[spring-aop-5.3.27.jar:5.3.27]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704) ~[spring-aop-5.3.27.jar:5.3.27]
+	at com.hmall.cart.service.impl.CartServiceImpl$$EnhancerBySpringCGLIB$$a599f049.queryMyCarts(<generated>) ~[classes/:na]
+	at com.hmall.cart.controller.CartController.queryMyCarts(CartController.java:46) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+22:42:41:209 ERROR 36472 --- [http-nio-8082-exec-10] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.builder.BuilderException: Error evaluating expression 'ew.sqlSegment != null and ew.sqlSegment != '' and ew.nonEmptyOfWhere'. Cause: org.apache.ibatis.ognl.OgnlException: sqlSegment [java.lang.NoClassDefFoundError: Could not initialize class com.baomidou.mybatisplus.core.toolkit.support.SerializedLambdaMeta]] with root cause
+
+java.lang.ExceptionInInitializerError: Exception java.lang.reflect.InaccessibleObjectException: Unable to make field private final java.lang.Class java.lang.invoke.SerializedLambda.capturingClass accessible: module java.base does not "opens java.lang.invoke" to unnamed module @6302bbb1 [in thread "http-nio-8082-exec-4"]
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:354) ~[na:na]
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:297) ~[na:na]
+	at java.base/java.lang.reflect.Field.checkCanSetAccessible(Field.java:178) ~[na:na]
+	at java.base/java.lang.reflect.Field.setAccessible(Field.java:172) ~[na:na]
+	at com.baomidou.mybatisplus.core.toolkit.SetAccessibleAction.run(SetAccessibleAction.java:18) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.toolkit.SetAccessibleAction.run(SetAccessibleAction.java:9) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:318) ~[na:na]
+	at com.baomidou.mybatisplus.core.toolkit.ReflectionKit.setAccessible(ReflectionKit.java:203) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.toolkit.support.SerializedLambdaMeta.<clinit>(SerializedLambdaMeta.java:19) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.toolkit.LambdaUtils.extract(LambdaUtils.java:55) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.getColumnCache(AbstractLambdaWrapper.java:75) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.columnToString(AbstractLambdaWrapper.java:62) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.columnToString(AbstractLambdaWrapper.java:58) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractLambdaWrapper.columnToString(AbstractLambdaWrapper.java:38) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractWrapper.lambda$columnToSqlSegment$a3f115af$1(AbstractWrapper.java:575) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682) ~[na:na]
+	at com.baomidou.mybatisplus.core.conditions.segments.NormalSegmentList.childrenSqlSegment(NormalSegmentList.java:89) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.segments.AbstractISegmentList.getSqlSegment(AbstractISegmentList.java:103) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.segments.MergeSegments.getSqlSegment(MergeSegments.java:72) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.conditions.AbstractWrapper.getSqlSegment(AbstractWrapper.java:525) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.apache.ibatis.ognl.OgnlRuntime.invokeMethodInsideSandbox(OgnlRuntime.java:1266) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.OgnlRuntime.invokeMethod(OgnlRuntime.java:1251) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.OgnlRuntime.getMethodValue(OgnlRuntime.java:2163) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ObjectPropertyAccessor.getPossibleProperty(ObjectPropertyAccessor.java:66) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ObjectPropertyAccessor.getProperty(ObjectPropertyAccessor.java:160) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:3373) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:121) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTChain.getValueBody(ASTChain.java:141) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTNotEq.getValueBody(ASTNotEq.java:50) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.ASTAnd.getValueBody(ASTAnd.java:61) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:586) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:550) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:46) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateBoolean(ExpressionEvaluator.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:34) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.TrimSqlNode.apply(TrimSqlNode.java:55) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.IfSqlNode.apply(IfSqlNode.java:35) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:305) ~[mybatis-3.5.7.jar:3.5.7]
+	at com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor.intercept(MybatisPlusInterceptor.java:69) ~[mybatis-plus-extension-3.4.3.jar:3.4.3]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:62) ~[mybatis-3.5.7.jar:3.5.7]
+	at jdk.proxy2/jdk.proxy2.$Proxy141.query(Unknown Source) ~[na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:151) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:145) ~[mybatis-3.5.7.jar:3.5.7]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140) ~[mybatis-3.5.7.jar:3.5.7]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:427) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at jdk.proxy2/jdk.proxy2.$Proxy96.selectList(Unknown Source) ~[na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224) ~[mybatis-spring-2.0.6.jar:2.0.6]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.executeForMany(MybatisMapperMethod.java:166) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:77) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:148) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89) ~[mybatis-plus-core-3.4.3.jar:3.4.3]
+	at jdk.proxy2/jdk.proxy2.$Proxy97.selectList(Unknown Source) ~[na:na]
+	at com.baomidou.mybatisplus.extension.conditions.query.ChainQuery.list(ChainQuery.java:39) ~[mybatis-plus-extension-3.4.3.jar:3.4.3]
+	at com.hmall.cart.service.impl.CartServiceImpl.queryMyCarts(CartServiceImpl.java:76) ~[classes/:na]
+	at com.hmall.cart.service.impl.CartServiceImpl$$FastClassBySpringCGLIB$$7813828f.invoke(<generated>) ~[classes/:na]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386) ~[spring-aop-5.3.27.jar:5.3.27]
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85) ~[spring-aop-5.3.27.jar:5.3.27]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704) ~[spring-aop-5.3.27.jar:5.3.27]
+	at com.hmall.cart.service.impl.CartServiceImpl$$EnhancerBySpringCGLIB$$a599f049.queryMyCarts(<generated>) ~[classes/:na]
+	at com.hmall.cart.controller.CartController.queryMyCarts(CartController.java:46) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+22:50:33:741  WARN 36472 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+22:50:33:740  WARN 36472 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+22:50:33:741  WARN 36472 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+22:50:33:741  WARN 36472 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+22:50:33:836  INFO 36472 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+22:50:33:849  INFO 36472 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+22:50:34:180  INFO 36472 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+22:50:34:180  INFO 36472 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@a81e975[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+22:50:34:180  INFO 36472 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1720363187839_192.168.91.1_28976
+22:50:34:185  INFO 36472 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@fbf260a[Running, pool size = 4, active threads = 0, queued tasks = 0, completed tasks = 156]
+22:50:43:224  INFO 10844 --- [main] com.hmall.cart.cartApplication           : Starting cartApplication using Java 17.0.11 on LAPTOP-MN5CB8EN with PID 10844 (D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall\caet-service\target\classes started by QL in D:\BaiduNetdiskDownload\SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+22:50:43:226 DEBUG 10844 --- [main] com.hmall.cart.cartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+22:50:43:226  INFO 10844 --- [main] com.hmall.cart.cartApplication           : The following 1 profile is active: "local"
+22:50:44:116  INFO 10844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+22:50:44:119  INFO 10844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+22:50:44:144  INFO 10844 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+22:50:44:346  INFO 10844 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=91035b96-353b-3003-8244-abbaf27bb58a
+22:50:44:702  INFO 10844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+22:50:44:718  INFO 10844 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+22:50:44:718  INFO 10844 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+22:50:44:904  INFO 10844 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+22:50:44:904  INFO 10844 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1642 ms
+22:50:46:165  INFO 10844 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+22:50:46:623  INFO 10844 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of a548f003-9b03-455e-95b1-0aad41215c52
+22:50:46:665  INFO 10844 --- [main] org.reflections.Reflections              : Reflections took 27 ms to scan 1 urls, producing 3 keys and 6 values 
+22:50:46:699  INFO 10844 --- [main] org.reflections.Reflections              : Reflections took 18 ms to scan 1 urls, producing 4 keys and 9 values 
+22:50:46:716  INFO 10844 --- [main] org.reflections.Reflections              : Reflections took 13 ms to scan 1 urls, producing 3 keys and 10 values 
+22:50:46:719  WARN 10844 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:50:46:727  INFO 10844 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 1 keys and 5 values 
+22:50:46:740  INFO 10844 --- [main] org.reflections.Reflections              : Reflections took 11 ms to scan 1 urls, producing 1 keys and 7 values 
+22:50:46:751  INFO 10844 --- [main] org.reflections.Reflections              : Reflections took 8 ms to scan 1 urls, producing 2 keys and 8 values 
+22:50:46:753  WARN 10844 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+22:50:46:754  INFO 10844 --- [main] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] RpcClient init label, labels = {module=naming, source=sdk}
+22:50:46:756  INFO 10844 --- [main] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+22:50:46:756  INFO 10844 --- [main] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+22:50:46:757  INFO 10844 --- [main] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+22:50:46:758  INFO 10844 --- [main] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Try to connect to server on start up, server: {serverIp = '192.168.91.132', server main port = 8848}
+22:50:47:662  INFO 10844 --- [main] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Success to connect to server [192.168.91.132:8848] on start up, connectionId = 1720363847369_192.168.91.1_29870
+22:50:47:663  INFO 10844 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Notify connected event to listeners.
+22:50:47:664  INFO 10844 --- [main] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+22:50:47:664  INFO 10844 --- [main] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1081/0x0000022d23712228
+22:50:47:762  INFO 10844 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+22:50:47:946  INFO 10844 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP cart-service 192.168.221.1:8082 register finished
+22:50:47:948  INFO 10844 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+22:50:47:951  INFO 10844 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+22:50:47:975  INFO 10844 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+22:50:48:056  INFO 10844 --- [main] com.hmall.cart.cartApplication           : Started cartApplication in 5.559 seconds (JVM running for 6.434)
+22:50:48:241  INFO 10844 --- [nacos-grpc-client-executor-8] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Receive server push request, request = NotifySubscriberRequest, requestId = 7
+22:50:48:254  INFO 10844 --- [nacos-grpc-client-executor-8] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Ack server push request, request = NotifySubscriberRequest, requestId = 7
+22:50:51:414  INFO 10844 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+22:50:51:414  INFO 10844 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+22:50:51:415  INFO 10844 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+22:50:55:875  INFO 10844 --- [http-nio-8082-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+22:50:57:779  INFO 10844 --- [http-nio-8082-exec-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+22:50:57:798 DEBUG 10844 --- [http-nio-8082-exec-4] c.h.cart.mapper.CartMapper.selectList    : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+22:50:57:842 DEBUG 10844 --- [http-nio-8082-exec-4] c.h.cart.mapper.CartMapper.selectList    : ==> Parameters: 1(Long)
+22:50:58:048 DEBUG 10844 --- [http-nio-8082-exec-4] c.h.cart.mapper.CartMapper.selectList    : <==      Total: 1
+22:50:58:743  INFO 10844 --- [nacos-grpc-client-executor-13] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Receive server push request, request = NotifySubscriberRequest, requestId = 8
+22:50:58:744  INFO 10844 --- [nacos-grpc-client-executor-13] com.alibaba.nacos.common.remote.client   : [a548f003-9b03-455e-95b1-0aad41215c52] Ack server push request, request = NotifySubscriberRequest, requestId = 8
+22:51:20:104  WARN 10844 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+22:51:20:104  WARN 10844 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+22:51:20:105  WARN 10844 --- [Thread-4] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+22:51:20:106  WARN 10844 --- [Thread-7] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+22:51:20:158  INFO 10844 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+22:51:20:165  INFO 10844 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+22:51:20:497  INFO 10844 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+22:51:20:498  INFO 10844 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@18423607[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+22:51:20:498  INFO 10844 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1720363847369_192.168.91.1_29870
+22:51:20:506  INFO 10844 --- [nacos-grpc-client-executor-20] c.a.n.c.remote.client.grpc.GrpcClient    : [1720363847369_192.168.91.1_29870]Ignore complete event,isRunning:false,isAbandon=false
+22:51:20:512  INFO 10844 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@5f5653bb[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 21]
+22:51:20:526  INFO 10844 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+22:51:20:565  INFO 10844 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -1,6 +1,7 @@
 package com.hmall.cart.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -16,6 +17,8 @@ import com.hmall.common.utils.CollUtils;
 import com.hmall.common.utils.UserContext;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +46,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
 
     //private final IItemService itemService;
     private final RestTemplate restTemplate;
+    private final DiscoveryClient discoveryClient;
 //    @Override
 //    public void addItem2Cart(CartFormDTO cartFormDTO) {
 //        // 1.获取登录用户
@@ -87,9 +91,30 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     private void handleCartItems(List<CartVO> vos) {
          //1.获取商品id
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
-        ResponseEntity<List<ItemDTO>> response = restTemplate.exchange("http://localhost:8081/items?ids={id}", HttpMethod.GET, null, new ParameterizedTypeReference<List<ItemDTO>>() {
-        }, Map.of("ids", CollUtil.join(itemIds,",")));
+//        ResponseEntity<List<ItemDTO>> response = restTemplate.exchange("http://localhost:8081/items?ids={id}", HttpMethod.GET, null, new ParameterizedTypeReference<List<ItemDTO>>() {
+//        }, Map.of("ids", CollUtil.join(itemIds,",")));
 
+//
+//        if(!response.getStatusCode().is2xxSuccessful())
+//        {
+//            return ;
+//        }
+//
+//
+//        List<com.hmall.cart.domain.dto.ItemDTO> items = response.getBody();
+//        if (CollUtils.isEmpty(items)) {
+//            return;
+//        }
+
+        //根据服务名称获得服务
+        List<ServiceInstance> serviceInstances = discoveryClient.getInstances("item-service");
+        ServiceInstance serviceInstance = serviceInstances.get(RandomUtil.randomInt(serviceInstances.size()));
+
+        ResponseEntity<List<ItemDTO>> response = restTemplate.exchange(serviceInstance.getUri()+"/items?ids={ids}",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<ItemDTO>>() {},
+                Map.of("ids", CollUtil.join(itemIds,",")));
         if(!response.getStatusCode().is2xxSuccessful())
         {
             return ;
@@ -100,7 +125,8 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
         if (CollUtils.isEmpty(items)) {
             return;
         }
-        // 3.转为 id 到 item的map
+
+            // 3.转为 id 到 item的map
         Map<Long, ItemDTO> itemMap = items.stream().collect(Collectors.toMap(ItemDTO::getId, Function.identity()));
         //Map<Long, ItemDTO> itemMap = items.stream().collect(Collectors.toMap(ItemDTO::getId, Function.identity()));
         // 4.写入vo
