@@ -27,8 +27,8 @@ logging:
 knife4j:
   enable: true
   openapi:
-    title: 黑马商品接口文档
-    description: "黑马商品接口文档"
+    title: 商品接口文档
+    description: "商品接口文档"
     email: zhanghuyi@itcast.cn
     concat: 虎哥
     url: https://www.itcast.cn
