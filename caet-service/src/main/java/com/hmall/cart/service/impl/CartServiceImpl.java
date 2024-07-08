@@ -5,6 +5,7 @@ import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hmall.cart.Client.itemClient;
 import com.hmall.cart.domain.dto.CartFormDTO;
 import com.hmall.cart.domain.dto.ItemDTO;
 import com.hmall.cart.domain.po.Cart;
@@ -45,8 +46,9 @@ import java.util.stream.Collectors;
 public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements ICartService {
 
     //private final IItemService itemService;
-    private final RestTemplate restTemplate;
+   // private final RestTemplate restTemplate;
     private final DiscoveryClient discoveryClient;
+    private final itemClient Client;
 //    @Override
 //    public void addItem2Cart(CartFormDTO cartFormDTO) {
 //        // 1.获取登录用户
@@ -107,21 +109,22 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
 //        }
 
         //根据服务名称获得服务
-        List<ServiceInstance> serviceInstances = discoveryClient.getInstances("item-service");
-        ServiceInstance serviceInstance = serviceInstances.get(RandomUtil.randomInt(serviceInstances.size()));
-
-        ResponseEntity<List<ItemDTO>> response = restTemplate.exchange(serviceInstance.getUri()+"/items?ids={ids}",
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<List<ItemDTO>>() {},
-                Map.of("ids", CollUtil.join(itemIds,",")));
-        if(!response.getStatusCode().is2xxSuccessful())
-        {
-            return ;
-        }
-
-
-        List<com.hmall.cart.domain.dto.ItemDTO> items = response.getBody();
+//        List<ServiceInstance> serviceInstances = discoveryClient.getInstances("item-service");
+//        ServiceInstance serviceInstance = serviceInstances.get(RandomUtil.randomInt(serviceInstances.size()));
+//
+//        ResponseEntity<List<ItemDTO>> response = restTemplate.exchange(serviceInstance.getUri()+"/items?ids={ids}",
+//                HttpMethod.GET,
+//                null,
+//                new ParameterizedTypeReference<List<ItemDTO>>() {},
+//                Map.of("ids", CollUtil.join(itemIds,",")));
+//        if(!response.getStatusCode().is2xxSuccessful())
+//        {
+//            return ;
+//        }
+//
+//
+//        List<com.hmall.cart.domain.dto.ItemDTO> items = response.getBody();
+        List<ItemDTO> items = Client.queryItemByIds(itemIds);
         if (CollUtils.isEmpty(items)) {
             return;
         }
